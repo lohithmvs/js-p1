@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Number patterns
+    </h1>
+    <script>
+        let n=prompt('enter the number of rows');
+        let a=0
+        for(let i=1;i<=n;i++){
+            a+=i;
+        }
+        let arr=[];
+        arr.push(2);
+        let b=3;
+        var fn1=((nn)=>{
+            for(let i=2;i*i<=nn;i++){
+                if(nn%i==0){
+                    return false;
+                }
+            }
+            return true;
+        })
+        while(arr.length!=a){
+            if(fn1(b)){
+                arr.push(b);
+                b++;
+            }
+            else{
+                b++;
+            }
+        }
+        let x="";
+        g=0;
+        for(let i=0;i<n;i++){
+            for(let j=0;j<i+1;j++){
+                x+=arr[g]+" ";
+                g++;
+            }
+            x+="\n";
+        }
+        console.log(x);
+        var s=document.createElement("div");
+        s.innerText=x;
+        document.body.appendChild(s);
+    </script>
+</body>
+</html>
